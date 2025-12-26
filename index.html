@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>누리채 이룸채 - 편안한 두 번째 집</title>
+
+  <!-- SEO -->
+  <meta name="description" content="전북 완주군 이서면 누리채 이룸채. 교육 기간 동안 편안하게 머무를 수 있는 숙소입니다.">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ================= Header ================= */
+    header {
+      height: 320px;
+      background: linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.45)
+      ),
+      url("jhead.jpg") center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 2.4em;
+      margin: 0;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.1em;
+      color: #ddd;
+    }
+
+    /* ================= Nav ================= */
+    nav {
+      background-color: #5f5f5f;
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ================= Main ================= */
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    section {
+      padding: 40px 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    section:last-child {
+      border-bottom: none;
+    }
+
+    h2 {
+      border-left: 5px solid #8d7b68;
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* ================= Video ================= */
+    .intro-video {
+      max-width: 720px;
+      margin: 20px auto 0;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    /* ================= Rooms ================= */
+    .room {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .room-info {
+      padding: 15px;
+    }
+
+    .room-video {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      padding: 0 15px;
+    }
+
+    /* ================= Location ================= */
+    .map-links {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 1.05em;
+    }
+
+    .map-links a {
+      margin: 0 10px;
+      color: #5f5f5f;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .map-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ================= Footer ================= */
+    footer {
+      background-color: #4b4b4b;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    /* ================= Mobile ================= */
+    @media (max-width: 600px) {
+      header {
+        height: 240px;
+      }
+
+      header h1 {
+        font-size: 1.9em;
+      }
+
+      .intro-video {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div>
+    <h1>누리채 이룸채</h1>
+    <p>편안함과 정성을 담은 두 번째 집</p>
+  </div>
+</header>
+
+<nav>
+  <a href="#intro">소개</a>
+  <a href="#rooms">객실 안내</a>
+  <a href="#location">오시는 길</a>
+  <a href="#contact">문의</a>
+</nav>
+
+<main>
+
+  <!-- 소개 -->
+  <section id="intro">
+    <h2>소개</h2>
+    <p>
+      누리채 이룸채는 교육 기간 동안 선생님들께서
+      내 집처럼 편안하게 머무르실 수 있도록
+      정성껏 관리하는 공간입니다.
+    </p>
+
+    <div class="intro-video">
+      <video src="j1.mp4" controls playsinline></video>
+    </div>
+  </section>
+
+  <!-- 객실 -->
+  <section id="rooms">
+    <h2>객실 안내</h2>
+
+    <div class="room">
+      <div class="room-info">
+        <h3>1~4호</h3>
+        <p>따뜻한 햇살과 공원이 보이는 아늑한 공간</p>
+      </div>
+      <div class="room-video">
+        <video src="s1.mp4" controls playsinline></video>
+      </div>
+    </div>
+
+    <div class="room">
+      <div class="room-info">
+        <h3>5~8호</h3>
+        <p>카페 전망과 야경이 아름다운 공간</p>
+      </div>
+      <div class="room-video">
+        <video src="n1.mp4" controls playsinline></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- 위치 -->
+  <section id="location">
+    <h2>오시는 길</h2>
+    <p>📍 전북특별자치도 완주군 이서면 지사제로 6-23, 25</p>
+
+    <div class="map-links">
+      <a href="https://map.kakao.com/link/search/전북특별자치도 완주군 이서면 지사제로 6-23" target="_blank">
+        📍 카카오맵
+      </a>
+      |
+      <a href="https://map.naver.com/v5/search/전북특별자치도 완주군 이서면 지사제로 6-23" target="_blank">
+        📍 네이버지도
+      </a>
+    </div>
+  </section>
+
+  <!-- 문의 -->
+  <section id="contact">
+    <h2>문의</h2>
+    <p>📞 010-2053-4959</p>
+    <p>🕒 24시간 상담 가능</p>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 누리채 이룸채 | 편안함이 있는 공간
+</footer>
+
+</body>
+</html>
+
