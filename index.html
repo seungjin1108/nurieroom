@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>누리채 이룸채 - 편안한 두 번째 집</title>
+  <title>누리채 이룸채 - 편안한 집</title>
 
-  <!-- SEO -->
   <meta name="description" content="전북 완주군 이서면 누리채 이룸채. 교육 기간 동안 편안하게 머무를 수 있는 숙소입니다.">
+<meta property="og:title" content="누리채 이룸채 – 연수원 도보 3분 숙소">
+<meta property="og:description" content="전북 완주군 이서면, 교육 기간 동안 편안하게 머무는 숙소">
+<meta property="og:image" content="s1.jpg">
+<meta property="og:type" content="website">
 
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 
   <style>
@@ -19,14 +21,17 @@
       color: #333;
       line-height: 1.6;
     }
+    /* ===== 소개글 글자 크기 ===== */
+#intro .intro-text p {
+  font-size: 1.5em;   /* 기본보다 약 10% 큼 */
+  line-height: 1.8;   /* 가독성 ↑ */
+}
+
 
     /* ================= Header ================= */
     header {
-      height: 320px;
-      background: linear-gradient(
-        rgba(0,0,0,0.45),
-        rgba(0,0,0,0.45)
-      ),
+      height: 400px;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
       url("jhead.jpg") center / cover no-repeat;
       display: flex;
       align-items: center;
@@ -46,6 +51,19 @@
       color: #ddd;
     }
 
+/* ===== 도보 2분 거리 (노란 글씨 + 크게) ===== */
+.distance-badge {
+  margin-top: 18px;
+  font-size: 1.8em;       /* 글자 더 크게 */
+  font-weight: 700;
+  color: #ffd54f;         /* 선명한 노란색 */
+}
+
+.distance-badge strong {
+  color: #ffeb3b;         /* '도보 2분 거리' 더 밝은 노랑 */
+  font-size: 1.2em;
+}
+
     /* ================= Nav ================= */
     nav {
       background-color: #5f5f5f;
@@ -58,10 +76,6 @@
       margin: 0 18px;
       text-decoration: none;
       font-weight: 500;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
     }
 
     /* ================= Main ================= */
@@ -78,24 +92,38 @@
       border-bottom: 1px solid #eee;
     }
 
-    section:last-child {
-      border-bottom: none;
-    }
-
     h2 {
       border-left: 5px solid #8d7b68;
       padding-left: 10px;
       margin-bottom: 20px;
     }
 
-    /* ================= Video ================= */
-    .intro-video {
-      max-width: 720px;
-      margin: 20px auto 0;
+    /* ================= Intro Split ================= */
+    .intro-wrap {
+      display: flex;
+      gap: 30px;
+      align-items: center;
     }
 
+    .intro-text {
+      flex: 1;
+    }
+
+    .intro-image {
+      flex: 1;
+    }
+
+    .intro-image img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    /* ================= Video (원본 비율 유지) ================= */
     video {
       width: 100%;
+      height: auto;
+      object-fit: contain;
+      background-color: #000;
       border-radius: 8px;
     }
 
@@ -103,37 +131,64 @@
     .room {
       border: 1px solid #ddd;
       border-radius: 8px;
-      overflow: hidden;
       margin-bottom: 30px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      overflow: hidden;
     }
+    
+    /* ===== 객실 영상만 크기 줄이기 ===== */
+.room-video {
+  max-width: 600px;   /* ← 여기 숫자로 크기 조절 */
+  margin: 0 auto 20px;
+  padding: 0 15px 20px;
+    }
+
 
     .room-info {
       padding: 15px;
     }
 
-    .room-video {
-      max-width: 900px;
-      margin: 0 auto 20px;
-      padding: 0 15px;
+  
+
+    /* ================= Common ================= */
+    .common-videos {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .video-box {
+      flex: 1;
+    }
+
+    .video-label {
+      font-weight: bold;
+      margin-bottom: 8px;
     }
 
     /* ================= Location ================= */
-    .map-links {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 1.05em;
+    
+    #location {
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("nav.jpg") no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  color: #fff;
+  text-align: center;
+  min-height: 500px;   /* ★ 이게 중요 */
+}
+
+
+    #location h2 {
+      color: #fff;
+      border-left: 5px solid #fff;
     }
 
     .map-links a {
-      margin: 0 10px;
-      color: #5f5f5f;
+      color: #fff;
+      font-weight: bold;
       text-decoration: none;
-      font-weight: 600;
-    }
-
-    .map-links a:hover {
-      text-decoration: underline;
+      margin: 0 8px;
     }
 
     /* ================= Footer ================= */
@@ -146,19 +201,96 @@
     }
 
     /* ================= Mobile ================= */
-    @media (max-width: 600px) {
-      header {
-        height: 240px;
+    @media (max-width: 768px) {
+      .intro-wrap {
+        flex-direction: column;
       }
 
-      header h1 {
-        font-size: 1.9em;
-      }
-
-      .intro-video {
-        max-width: 100%;
+      .common-videos {
+        flex-direction: column;
       }
     }
+
+    /* ================= 관리 섹션 ================= */
+#care {
+  background-color: #fafafa;
+  text-align: center;
+}
+
+.care-desc {
+  margin-bottom: 30px;
+  color: #555;
+  font-size: 1.05em;
+  line-height: 1.7;
+}
+
+.care-list {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.care-item {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 15px;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.care-icon {
+  font-size: 2em;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.care-item p {
+  margin: 0;
+  font-size: 0.95em;
+  color: #333;
+}
+/* ===== 객실 사진 + 영상 나란히 ===== */
+.room-media {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 0 15px 20px;
+}
+
+.room-media img,
+.room-media video {
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+}
+/* ===== 객실 미디어 높이 통일 (영상 안전) ===== */
+.room-media img {
+  height: 260px;
+  object-fit: cover;
+}
+
+.room-media video {
+  height: 260px;
+  object-fit: contain;
+  background: #000;
+}
+
+
+/* 모바일에서는 세로로 */
+@media (max-width: 768px) {
+  .room-media {
+    flex-direction: column;
+  }
+}
+/* ===== 주방 영상 높이 통일 ===== */
+.common-videos video {
+  height: 260px;
+  object-fit: contain;   /* 영상 전체 보이게 */
+  background: #000;
+}
+
   </style>
 </head>
 
@@ -167,7 +299,13 @@
 <header>
   <div>
     <h1>누리채 이룸채</h1>
-    <p>편안함과 정성을 담은 두 번째 집</p>
+
+  <div class="distance-badge">
+      누리채·이룸채 ↔ 지방자치인재개발원<br>
+      <strong>도보 2분</strong>
+    </div>
+
+    <p>신호등 한 번만 건너면 도착하는 가장 단순한 동선</p>
   </div>
 </header>
 
@@ -183,14 +321,21 @@
   <!-- 소개 -->
   <section id="intro">
     <h2>소개</h2>
-    <p>
-      누리채 이룸채는 교육 기간 동안 선생님들께서
-      내 집처럼 편안하게 머무르실 수 있도록
-      정성껏 관리하는 공간입니다.
-    </p>
-
-    <div class="intro-video">
-      <video src="j1.mp4" controls playsinline></video>
+    <div class="intro-wrap">
+      <div class="intro-text">
+        <p>
+✔ 연수원 도보 2분<br>
+✔ 깔끔한 관리 & 넉넉한 주차<br>
+✔ 빠른 인터넷 / CCTV / 방범창<br>
+✔ 타 숙소 대비 약 1.5배 넓은 객실·욕실<br>
+✔ 각 방 에어컨 & 층 마다 보일러 2대<br>
+✔ 전 객실 제습기 구비<br>
+✔ 풀옵션 비품 & 최상급 침구·가구<br>
+        </p>
+      </div>
+      <div class="intro-image">
+        <img src="s1.jpg" alt="숙소 전경">
+      </div>
     </div>
   </section>
 
@@ -201,44 +346,120 @@
     <div class="room">
       <div class="room-info">
         <h3>1~4호</h3>
-        <p>따뜻한 햇살과 공원이 보이는 아늑한 공간</p>
+        따뜻한 햇살과 공원이 보이는 공간<br>
+<strong>인근 숙소 대비 넉넉한 크기의 객실</strong>
+
       </div>
-      <div class="room-video">
-        <video src="s1.mp4" controls playsinline></video>
+      <div class="room-media">
+        <img src="sr.jpg" alt="1~4호 객실 사진">
+        <video src="s1.mp4" controls playsinline preload="metadata"></video>
       </div>
     </div>
 
     <div class="room">
       <div class="room-info">
         <h3>5~8호</h3>
-        <p>카페 전망과 야경이 아름다운 공간</p>
+        카페 전망과 야경이 어우러진 공간<br>
+<strong>인근 숙소 대비 여유 있는 크기의 객실</strong>
+
       </div>
-      <div class="room-video">
-        <video src="n1.mp4" controls playsinline></video>
+      <div class="room-media">
+        <img src="nr.jpg" alt="5~8호 객실 사진">
+        <video src="n1.mp4" controls playsinline preload="metadata"></video>
       </div>
     </div>
   </section>
 
+  <!-- 주방 -->
+<section id="common">
+  <h2>주방</h2>
+
+  <div class="room-media">
+    <!-- 왼쪽: 사진 -->
+    <img src="k1.jpg" alt="공용 주방 전경">
+
+    <!-- 오른쪽: 영상 -->
+    <video src="nk.mp4" controls playsinline preload="metadata"></video>
+  </div>
+</section>
+
+
+  <!-- 관리 -->
+<section id="care">
+  <h2>정성으로 관리합니다</h2>
+
+  <p class="care-desc">
+    연수 기간 동안 불편함 없이 머무르실 수 있도록<br>
+    눈에 보이는 곳부터 보이지 않는 부분까지 직접 관리합니다.
+  </p>
+
+  <div class="care-list">
+    <div class="care-item">
+      <span class="care-icon">🛏️</span>
+      <p>퇴실 후 침구 전면 교체</p>
+    </div>
+
+    <div class="care-item">
+      <span class="care-icon">🧹</span>
+      <p>공용공간 매일 청소 및 점검</p>
+    </div>
+
+    <div class="care-item">
+      <span class="care-icon">🌬️</span>
+      <p>환기·제습 관리로 쾌적한 실내 유지</p>
+    </div>
+
+    <div class="care-item">
+      <span class="care-icon">📹</span>
+      <p>CCTV 운영으로 안전한 환경 유지</p>
+    </div>
+  </div>
+</section>
+
+
   <!-- 위치 -->
   <section id="location">
-    <h2>오시는 길</h2>
-    <p>📍 전북특별자치도 완주군 이서면 지사제로 6-23, 25</p>
+  <h2>오시는 길</h2>
 
-    <div class="map-links">
-      <a href="https://map.kakao.com/link/search/전북특별자치도 완주군 이서면 지사제로 6-23" target="_blank">
-        📍 카카오맵
-      </a>
-      |
-      <a href="https://map.naver.com/v5/search/전북특별자치도 완주군 이서면 지사제로 6-23" target="_blank">
-        📍 네이버지도
-      </a>
+  <div class="location-center">
+
+    <!-- ✅ 누리채 (위) -->
+    <div class="location-item">
+      <h3>📍 누리채</h3>
+      <p>
+        전북특별자치도 완주군 이서면 용서리 830-7<br>
+        전북특별자치도 완주군 이서면 지사제3로 6-25
+      </p>
+      <div class="map-links">
+        <a href="https://map.kakao.com/link/search/전북%20완주군%20이서면%20용서리%20830-7" target="_blank">카카오맵</a> |
+        <a href="https://map.naver.com/v5/search/전북%20완주군%20이서면%20용서리%20830-7" target="_blank">네이버지도</a>
+      </div>
     </div>
+
+    <div class="location-divider"></div>
+
+    <!-- ✅ 이룸채 (아래) -->
+    <div class="location-item">
+      <h3>📍 이룸채</h3>
+      <p>
+        전북특별자치도 완주군 이서면 용서리 830-8<br>
+        전북특별자치도 완주군 이서면 지사제3로 6-25
+      </p>
+      <div class="map-links">
+        <a href="https://map.kakao.com/link/search/전북%20완주군%20이서면%20용서리%20830-8" target="_blank">카카오맵</a> |
+        <a href="https://map.naver.com/v5/search/전북%20완주군%20이서면%20용서리%20830-8" target="_blank">네이버지도</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
   </section>
 
   <!-- 문의 -->
   <section id="contact">
     <h2>문의</h2>
-    <p>📞 010-2053-4959</p>
+    <p>📞 <a href="tel:01020534959">010-2053-4959</a></p>
     <p>🕒 24시간 상담 가능</p>
   </section>
 
@@ -250,4 +471,3 @@
 
 </body>
 </html>
-
